@@ -1,23 +1,62 @@
 aid: dexyp
+
 name: Dexyp
-description: 'Dexyp is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Dexyp is a business software provider that appears to have been acquired by or merged into Thryv, a cloud‑based platform for small businesses. The Dexyp domain redirects to Thryv’s corporate website, indicating that its services are now offered under the Thryv brand. Dexyp historically delivered SaaS solutions for customer relationship management, marketing automation, and workflow optimization for service‑oriented companies.'
+
 url: https://raw.githubusercontent.com/api-evangelist/dexyp/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-23 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-23'
+
 modified: '2026-10-23'
+
 tags:
-- Company
-apis: []
+- Business Software
+- SaaS
+- CRM
+- Marketing Automation
+- Workflow Optimization
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: LLMsTxt
+  url: llms/dexyp-llms.txt
+- type: Hosts
+  url: hosts/dexyp-hosts.yml
+- type: Vendors
+  url: vendors/dexyp-vendors.yml
+- type: DomainSecurity
+  url: security/dexyp-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/dexyp
+  url: https://www.thryv.com
+
+apis: []
+
+x-coverage:
+  state: blocked
+  reason: bot-challenge
+  detail: Front door https://www.thryv.com returned HTTP 403 bot challenge, preventing any further probing.
+  evidence:
+    - url: https://www.thryv.com
+      status: 403
+  checked: '2026-10-23'
+x-enrichment:
+  date: '2026-10-23'
+  status: enriched
+  artifacts_added: 8
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
